@@ -18,7 +18,7 @@ $("#add-train").on("click", function (event){
 
     var trainName =$("#name-input").val().trim();
     var destination =$("#destination-input").val().trim();
-    var time = moment($("#start-input").val().trim());
+    var time =$("#start-input").val().trim();
     var frequency =$("#freq-input").val().trim();
 
     var newTrain = {
@@ -28,5 +28,8 @@ $("#add-train").on("click", function (event){
         freq: frequency,
     }
 
+    database.ref().push(newTrain);
 
+
+    $("input").val("");
 })
