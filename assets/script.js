@@ -11,7 +11,22 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
-var trainName = "";
-var Destination = "";
-var Time = 0;
-var Frequency = 0;
+
+
+$("#add-train").on("click", function (event){
+    event.preventDefault();
+
+    var trainName =$("#name-input").val().trim();
+    var destination =$("#destination-input").val().trim();
+    var time = moment($("#start-input").val().trim());
+    var frequency =$("#freq-input").val().trim();
+
+    var newTrain = {
+        name : trainName,
+        destination: destination,
+        start: time,
+        freq: frequency,
+    }
+
+
+})
