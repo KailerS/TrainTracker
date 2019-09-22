@@ -23,6 +23,56 @@
 </head>
 <body>
 
+    <div class="jumbotron">
+        <h1 class="display-4">Train Tracker</h1>  
+        <h2>A better way to track trains</h2>      
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Current Train Schedule
+        </div>  
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                <th scope="col">Train name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+                </tr>                    
+            </thead>
+            <tbody>                   
+                
+            </tbody>
+        </table>  
+                        
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Add Train
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Train Name</label>
+                <input type="string" class="form-control" id="name-input" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Destination</label>
+                <input type="string" class="form-control" id="destination-input" placeholder=""> 
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">First Train time (HH:mm - military time)</label>
+                <input type="string" class="form-control" id="start-input" placeholder=""> 
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Frequency (min)</label>
+                <input type="string" class="form-control" id="freq-input" placeholder=""> 
+            </div>
+            <button id="add-user" class="btn btn-primary" type="submit" value="Submit">Submit</button>
+        </form>
+    </div> 
+                
+
 
 
 

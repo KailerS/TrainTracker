@@ -1,3 +1,12 @@
 body {
     background-color: black;
 }
+.jumbotron{
+    text-align: center;
+    margin: 0, auto;
+}
+.card{
+    margin: auto;
+    width: 70%;
+    margin-bottom: 1%;
+}
