@@ -40,7 +40,22 @@ database.ref().on("child_added", function (childSnapshot){
     var destination = childSnapshot.val().destination;
     var time = childSnapshot.val().start;
     var frequency = childSnapshot.val().freq;
-   
+    var prettyTime =moment.unix(time).format("HH:mm");
+    var timeConverted = moment(prettyTime, "HH:mm").subtract(1, "years");    
+    var difference = moment().diff(moment(timeConverted), "minutes");
+    var remainder = difference % frequency;
+    var minutesAway = frequency - remainder;
+    var nextTrain = moment().add(minutesAway, "minutes");
+    var prettyNextTrain = moment(nextTrain).format("HH:mm");
+
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destination),
+        $("<td>").text(frequency),
+        $("<td>").text(prettyNextTrain),
+        $("<td>").text(minutesAway),       
+    );
+    $("#table > tbody").append(newRow);
 
 
 });
